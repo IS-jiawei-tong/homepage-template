@@ -129,20 +129,10 @@
         <h2 class="section-title">Publications</h2>
         <div class="section-body">
           <div class="publications">
-            <ol class="bibliography">
-              <li>
-                <div class="pub-row">
-                  <div class="pub-content">
-                    <div class="title">Paper Title Goes Here</div>
-                    <div class="author"><strong>Your Name</strong>, Coauthor A, Coauthor B</div>
-                    <div class="periodical"><em><strong>Conference / Journal / arXiv</strong></em></div>
-                    <div class="links">
-                      <a href="#">Paper</a> / <a href="#">Code</a> / <a href="#">Project</a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </ol>
+            <ol class="bibliography"
+    id="publications-list"
+    data-highlight="Jiawei Tong">
+              </ol>
           </div>
         </div>
       </div>
@@ -215,5 +205,13 @@
       }
     })();
   </script>
+<!-- 把 publications.bib 的内容粘贴在这里 -->
+<script type="text/bibtex" id="publications-bib">
+  @article{tong2025lost,
+    title  = {Lost in the Distance? ...},
+    author = {Tong, Jiawei and Cui, Tingru and ...},
+    ...
+  }
+</script>
 </body>
 </html>
