@@ -19,12 +19,18 @@
   <link rel="stylesheet" href="assets/css/font_sans_serif.css">
   <link rel="stylesheet" href="assets/css/theme-luka.css">
   <script src="assets/js/publications.js" defer></script>
+  <style>html { scroll-behavior: smooth; }</style>
 </head>
 <body class="theme-luka">
   <nav class="top-nav">
     <div class="nav-container">
       <div class="nav-left">
         <a href="./">Home</a>
+        <a href="#about">Bio</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#publications">Publications</a>
+        <a href="#awards">Awards</a>
       </div>
       <div class="nav-right">
         <button id="themeToggle" class="theme-toggle" title="Toggle theme" aria-label="Toggle theme">
@@ -114,23 +120,14 @@
         </div>
       </div>
 
-      <div class="section" id="projects">
-        <h2 class="section-title">Projects</h2>
-        <div class="section-body">
-          <div class="card project-card">
-            <a href="https://github.com/yourname/project-name">Project Name</a>: A short one-line summary describing what this project does and why it matters.
-          </div>
-        </div>
-      </div>
-
       <div class="section" id="publications">
         <h2 class="section-title">Publications</h2>
         <div class="section-body">
           <div class="publications">
             <ol class="bibliography"
-    id="publications-list"
-    data-highlight="Jiawei Tong">
-              </ol>
+                id="publications-list"
+                data-highlight="Jiawei Tong">
+            </ol>
           </div>
         </div>
       </div>
@@ -154,7 +151,7 @@
 
     <footer class="site-footer">
       <p>
-        &copy; 2026 Your Name. All rights reserved.
+        &copy; 2026 Jiawei Tong. All rights reserved.
         <br>
         <span class="template-credit"><a href="https://github.com/wzsyyh/luka-homepage-template">Luka Homepage Template</a> by <a href="https://wzsyyh.github.io/">Yuheng Yang</a></span>
       </p>
@@ -203,13 +200,13 @@
       }
     })();
   </script>
-<!-- 把 publications.bib 的内容粘贴在这里 -->
-<script type="text/bibtex" id="publications-bib">
-  @article{tong2025lost,
-    title  = {TBC},
-    author = {Tong, Jiawei and Cui, Tingru and ...},
-    ...
-  }
-</script>
+
+  <script type="text/bibtex" id="publications-bib">
+    @article{tong2025lost,
+      title  = {TBC},
+      author = {Tong, Jiawei and Cui, Tingru and ...},
+      ...
+    }
+  </script>
 </body>
 </html>
