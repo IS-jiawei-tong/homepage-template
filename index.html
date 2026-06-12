@@ -21,19 +21,37 @@
   <script src="assets/js/publications.js" defer></script>
   <style>
     html { scroll-behavior: smooth; }
-     .nav-left a { margin-right: 1.5rem; }</style>
+    .nav-left a { margin-right: 1.5rem; }
+    .hero-banner { z-index: 0; position: relative; }
+    .wrapper { margin-top: -70px; position: relative; z-index: 1; }
+    .lang-toggle {
+      background: none;
+      border: 1px solid rgba(128, 128, 128, 0.4);
+      border-radius: 4px;
+      padding: 2px 7px;
+      cursor: pointer;
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: inherit;
+      margin-left: 0.6rem;
+      line-height: 1.6;
+      vertical-align: middle;
+    }
+    .lang-toggle:hover { opacity: 0.65; }
+  </style>
 </head>
 <body class="theme-luka">
   <nav class="top-nav">
     <div class="nav-container">
       <div class="nav-left">
-        <a href="./">Home</a>
-        <a href="#education">Education</a>
-        <a href="#service">Experience</a>
-        <a href="#publications">Publications</a>
-        <a href="#awards">Awards</a>
+        <a href="./"        data-en="Home"         data-zh="首页"    >Home</a>
+        <a href="#education" data-en="Education"   data-zh="教育"    >Education</a>
+        <a href="#experience" data-en="Service"    data-zh="服务"    >Service</a>
+        <a href="#publications" data-en="Publications" data-zh="成果">Publications</a>
+        <a href="#awards"   data-en="Awards"        data-zh="荣誉"   >Awards</a>
       </div>
       <div class="nav-right">
+        <button id="langToggle" class="lang-toggle" title="Switch language" aria-label="Switch language">中文</button>
         <button id="themeToggle" class="theme-toggle" title="Toggle theme" aria-label="Toggle theme">
           <i class="fa-solid fa-moon"></i>
         </button>
@@ -43,13 +61,13 @@
 
   <div class="hero-banner" style="
     width: 100%;
-    height: 280px;
+    height: 270px;
     background-image: url('assets/img/hero.jpg');
     background-size: cover;
     background-position: center 60%;
     margin-bottom: 0;
   "></div>
-  
+
   <div class="wrapper">
     <header class="sidebar">
       <div class="profile-card">
@@ -65,84 +83,142 @@
           <a href="https://scholar.google.com/citations?user=OdmybIkAAAAJ&hl=en" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
           <a href="https://www.linkedin.com/in/jiawei-vincent-tong-32442018b/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
         </div>
+      </div>
     </header>
 
     <section class="content">
+
+      <!-- ── Bio ───────────────────────────────────────────────────── -->
       <div class="section" id="about">
-        <h2 class="section-title">Bio</h2>
+        <h2 class="section-title" data-en="Bio" data-zh="简介">Bio</h2>
         <div class="section-body">
-          <p>Hello! I am <strong>Jiawei Tong</strong>, a PhD researcher in Information Systems.</p>
-          <p>3rd-year PhD candidate in Information Systems at the University of Melbourne. My research involves AI accountability, explainable AI (XAI), and human-AI teaming, with a behavioral focus on how people engage with AI systems in organizational contexts.</p>
-          <p><strong><a href="#" target="_blank" rel="noopener">Download my CV</a></strong> (tbc)</p>
+          <p data-en="Hello! I am &lt;strong&gt;Jiawei Tong&lt;/strong&gt;, a PhD researcher in Information Systems."
+             data-zh="你好！我是&lt;strong&gt;童嘉威&lt;/strong&gt;，一名信息系统方向的博士研究员。">
+            Hello! I am <strong>Jiawei Tong</strong>, a PhD researcher in Information Systems.
+          </p>
+          <p data-en="3rd-year PhD candidate in Information Systems at the University of Melbourne. My research involves AI accountability, explainable AI (XAI), and human-AI teaming, with a behavioral focus on how people engage with AI systems in organizational contexts."
+             data-zh="墨尔本大学信息系统专业三年级博士候选人。研究方向涵盖AI问责、可解释人工智能（XAI）与人机协作，聚焦于组织情境下个体与AI系统交互行为的规律。">
+            3rd-year PhD candidate in Information Systems at the University of Melbourne. My research involves AI accountability, explainable AI (XAI), and human-AI teaming, with a behavioral focus on how people engage with AI systems in organizational contexts.
+          </p>
+          <p>
+            <strong><a href="#" target="_blank" rel="noopener">
+              <span data-en="Download my CV" data-zh="下载简历">Download my CV</span>
+            </a></strong>
+            <span data-en="(tbc)" data-zh="（待更新）">(tbc)</span>
+          </p>
         </div>
       </div>
 
+      <!-- ── Education ──────────────────────────────────────────────── -->
       <div class="section" id="education">
-      <h2 class="section-title">Education</h2>
-      <div class="section-body">
-        <div class="card">
-          <div class="experience-item">
-            <img src="assets/img/UoM_Logo.jpg" alt="University of Melbourne" class="institution-logo">
-            <div class="experience-content">
-              <p class="exp-title"><strong>University of Melbourne</strong></p>
-              <p class="exp-detail">Doctor of Philosophy (Ph.D.) in Information Systems</p>
-              <p class="exp-period">Mar 2024 – Present</p>
+        <h2 class="section-title" data-en="Education" data-zh="教育背景">Education</h2>
+        <div class="section-body">
+          <div class="card">
+            <div class="experience-item">
+              <img src="assets/img/UoM_Logo.jpg" alt="University of Melbourne" class="institution-logo">
+              <div class="experience-content">
+                <p class="exp-title"><strong>University of Melbourne</strong></p>
+                <p class="exp-detail"
+                   data-en="Doctor of Philosophy (Ph.D.) in Information Systems"
+                   data-zh="信息系统博士（Ph.D.）">
+                  Doctor of Philosophy (Ph.D.) in Information Systems
+                </p>
+                <p class="exp-period"
+                   data-en="Mar 2024 – Present"
+                   data-zh="2024年3月 – 至今">
+                  Mar 2024 – Present
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="card">
-          <div class="experience-item">
-            <img src="assets/img/UoM_Logo.jpg" alt="University of Melbourne" class="institution-logo">
-            <div class="experience-content">
-              <p class="exp-title"><strong>University of Melbourne</strong></p>
-              <p class="exp-detail">Master of Information Systems, Research Specialization</p>
-              <p class="exp-period">Feb 2022 – Dec 2023</p>
+
+          <div class="card">
+            <div class="experience-item">
+              <img src="assets/img/UoM_Logo.jpg" alt="University of Melbourne" class="institution-logo">
+              <div class="experience-content">
+                <p class="exp-title"><strong>University of Melbourne</strong></p>
+                <p class="exp-detail"
+                   data-en="Master of Information Systems, Research Specialization"
+                   data-zh="信息系统研究型硕士">
+                  Master of Information Systems, Research Specialization
+                </p>
+                <p class="exp-period"
+                   data-en="Feb 2022 – Dec 2023"
+                   data-zh="2022年2月 – 2023年12月">
+                  Feb 2022 – Dec 2023
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="card">
-          <div class="experience-item">
-            <img src="assets/img/monash-logo.svg" alt="Monash University" class="institution-logo">
-            <div class="experience-content">
-              <p class="exp-title"><strong>Monash University</strong></p>
-              <p class="exp-detail">Bachelor of Information Technology, Majoring in Business Information Systems</p>
-              <p class="exp-period">Jul 2018 – Dec 2021</p>
+
+          <div class="card">
+            <div class="experience-item">
+              <img src="assets/img/monash-logo.svg" alt="Monash University" class="institution-logo">
+              <div class="experience-content">
+                <p class="exp-title"><strong>Monash University</strong></p>
+                <p class="exp-detail"
+                   data-en="Bachelor of Information Technology, Majoring in Business Information Systems"
+                   data-zh="信息技术学士，主修商业信息系统">
+                  Bachelor of Information Technology, Majoring in Business Information Systems
+                </p>
+                <p class="exp-period"
+                   data-en="Jul 2018 – Dec 2021"
+                   data-zh="2018年7月 – 2021年12月">
+                  Jul 2018 – Dec 2021
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="section" id="experience">
-      <h2 class="section-title">Service</h2>
-      <div class="section-body">
-        <div class="card timeline-item">
-          <div class="experience-item">
-            <div class="experience-content">
-              <p class="exp-title"><strong>Academic Reviewer</strong></p>
-              <p class="exp-detail">Humanities and Social Sciences Communications (2026)</p>
-              <p class="exp-detail">International Conference on Information Systems (2026)</p>
-              <p class="exp-detail">Hawaii International Conference on System Sciences (2025)</p>
-              <p class="exp-detail">Australasian Conference on Information Systems (2024, 2025)</p>
-              <p class="exp-detail">Information &amp; Management (2024, 2025)</p>
-              <p class="exp-period">2024 – Present</p>
+      <!-- ── Service ────────────────────────────────────────────────── -->
+      <div class="section" id="experience">
+        <h2 class="section-title" data-en="Service" data-zh="学术服务">Service</h2>
+        <div class="section-body">
+          <div class="card timeline-item">
+            <div class="experience-item">
+              <div class="experience-content">
+                <p class="exp-title">
+                  <strong data-en="Academic Reviewer" data-zh="学术审稿人">Academic Reviewer</strong>
+                </p>
+                <p class="exp-detail">Humanities and Social Sciences Communications (2026)</p>
+                <p class="exp-detail">International Conference on Information Systems (2026)</p>
+                <p class="exp-detail">Hawaii International Conference on System Sciences (2025)</p>
+                <p class="exp-detail">Australasian Conference on Information Systems (2024, 2025)</p>
+                <p class="exp-detail">Information &amp; Management (2024, 2025)</p>
+                <p class="exp-period"
+                   data-en="2024 – Present"
+                   data-zh="2024 – 至今">
+                  2024 – Present
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="card timeline-item">
-          <div class="experience-item">
-            <div class="experience-content">
-              <p class="exp-title"><strong>Association for Information Systems (AIS)</strong></p>
-              <p class="exp-detail">Doctoral Member</p>
-              <p class="exp-period">Mar 2024 – Mar 2026</p>
+
+          <div class="card timeline-item">
+            <div class="experience-item">
+              <div class="experience-content">
+                <p class="exp-title"><strong>Association for Information Systems (AIS)</strong></p>
+                <p class="exp-detail"
+                   data-en="Doctoral Member"
+                   data-zh="博士会员">
+                  Doctoral Member
+                </p>
+                <p class="exp-period"
+                   data-en="Mar 2024 – Mar 2026"
+                   data-zh="2024年3月 – 2026年3月">
+                  Mar 2024 – Mar 2026
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
+      <!-- ── Publications ───────────────────────────────────────────── -->
       <div class="section" id="publications">
-        <h2 class="section-title">Publications</h2>
+        <h2 class="section-title" data-en="Publications" data-zh="学术成果">Publications</h2>
         <div class="section-body">
           <div class="publications">
             <ol class="bibliography"
@@ -153,37 +229,59 @@
         </div>
       </div>
 
+      <!-- ── Awards ─────────────────────────────────────────────────── -->
       <div class="section" id="awards">
-        <h2 class="section-title">Honors &amp; Awards</h2>
+        <h2 class="section-title" data-en="Honors &amp; Awards" data-zh="荣誉与奖项">Honors &amp; Awards</h2>
         <div class="section-body">
           <div class="awards-grid">
             <div class="award-item">
               <span class="award-icon">🏅</span>
-              <div class="award-text"><strong>Melbourne Research Scholarship</strong>, University of Melbourne, 2023</div>
+              <div class="award-text"
+                   data-en="&lt;strong&gt;Melbourne Research Scholarship&lt;/strong&gt;, University of Melbourne, 2023"
+                   data-zh="&lt;strong&gt;墨尔本研究奖学金&lt;/strong&gt;，墨尔本大学，2023年">
+                <strong>Melbourne Research Scholarship</strong>, University of Melbourne, 2023
+              </div>
             </div>
             <div class="award-item">
               <span class="award-icon">🏅</span>
-              <div class="award-text"><strong>Melbourne Graduate Scholarship</strong>, University of Melbourne, 2021</div>
+              <div class="award-text"
+                   data-en="&lt;strong&gt;Melbourne Graduate Scholarship&lt;/strong&gt;, University of Melbourne, 2021"
+                   data-zh="&lt;strong&gt;墨尔本研究生奖学金&lt;/strong&gt;，墨尔本大学，2021年">
+                <strong>Melbourne Graduate Scholarship</strong>, University of Melbourne, 2021
+              </div>
             </div>
             <div class="award-item">
               <span class="award-icon">🏅</span>
-              <div class="award-text"><strong>Information Technology International Merit Scholarship</strong>, Monash University, 2018</div>
+              <div class="award-text"
+                   data-en="&lt;strong&gt;Information Technology International Merit Scholarship&lt;/strong&gt;, Monash University, 2018"
+                   data-zh="&lt;strong&gt;信息技术国际优秀奖学金&lt;/strong&gt;，莫纳什大学，2018年">
+                <strong>Information Technology International Merit Scholarship</strong>, Monash University, 2018
+              </div>
             </div>
           </div>
         </div>
       </div>
+
     </section>
 
     <footer class="site-footer">
       <p>
-        &copy; 2026 Jiawei Tong. All rights reserved.
+        <span data-en="&copy; 2026 Jiawei Tong. All rights reserved."
+              data-zh="&copy; 2026 童嘉威。保留所有权利。">
+          &copy; 2026 Jiawei Tong. All rights reserved.
+        </span>
         <br>
-        <span class="template-credit"><a href="https://github.com/wzsyyh/luka-homepage-template">Luka Homepage Template</a> by <a href="https://wzsyyh.github.io/">Yuheng Yang</a></span>
+        <span class="template-credit">
+          <a href="https://github.com/wzsyyh/luka-homepage-template">Luka Homepage Template</a>
+          by <a href="https://wzsyyh.github.io/">Yuheng Yang</a>
+        </span>
       </p>
     </footer>
   </div>
 
   <script src="assets/js/scale.fix.js"></script>
+
+  <!-- Theme toggle -->
   <script>
     (function() {
       const themeToggle = document.getElementById('themeToggle');
@@ -214,7 +312,6 @@
             }
           });
         }, { threshold: 0.1 });
-
         document.querySelectorAll('.section').forEach(function(el) {
           observer.observe(el);
         });
@@ -226,6 +323,31 @@
     })();
   </script>
 
+  <!-- Language toggle -->
+  <script>
+    (function() {
+      const langToggle = document.getElementById('langToggle');
+
+      function setLang(lang) {
+        document.querySelectorAll('[data-en]').forEach(function(el) {
+          el.innerHTML = el.dataset[lang] || el.dataset.en;
+        });
+        langToggle.textContent = lang === 'en' ? '中文' : 'EN';
+        document.documentElement.lang = lang === 'en' ? 'en' : 'zh';
+        localStorage.setItem('lang', lang);
+      }
+
+      const savedLang = localStorage.getItem('lang') || 'en';
+      setLang(savedLang);
+
+      langToggle.addEventListener('click', function() {
+        const current = localStorage.getItem('lang') || 'en';
+        setLang(current === 'en' ? 'zh' : 'en');
+      });
+    })();
+  </script>
+
+  <!-- Publications BibTeX -->
   <script type="text/bibtex" id="publications-bib">
 
     @article{tong_2025_better,
@@ -235,7 +357,7 @@
       year    = {2025},
       url     = {https://aisel.aisnet.org/acis2025/69}
     }
-    
+
     @article{tong_2025_understanding,
       author  = {Tong, Jiawei and Marx, Julian and Turel, Ofir and Cui, Tingru},
       title   = {Understanding AI Accountability Implementation in Organisations: Insights from a Chinese Commercial Bank},
@@ -243,7 +365,7 @@
       year    = {2025},
       url     = {https://aisel.aisnet.org/pacis2025/it_strategy/it_strategy/5}
     }
-    
+
     @inproceedings{tong_2025_bridging,
       author    = {Tong, Jiawei and Marx, Julian and Cui, Tingru and Turel, Ofir},
       title     = {Bridging the AI Accountability Gap: The Role of Collaboration Paradigms and Reason-Responsiveness},
@@ -251,7 +373,7 @@
       year      = {2025},
       url       = {https://aisel.aisnet.org/ecis2025/human_ai/human_ai/2}
     }
-    
+
     @inproceedings{tong_2024_combatting,
       author    = {Tong, Jiawei and Marx, Julian and Turel, Ofir and Cui, Tingru},
       title     = {Combatting Deepfake Misinformation on Social Media: A Scoping Review and Research Agenda},
@@ -259,7 +381,7 @@
       year      = {2024},
       url       = {https://aisel.aisnet.org/acis2024/25}
     }
-    
+
     @inproceedings{mou_2024_effective,
       author    = {Mou, Danlei and Cui, Tingru and Holtta-Otto, Katja and Du, Bo and Tong, Jiawei},
       title     = {Effective Stereotypical Bias Detection: The Impact of Human-AI Collaboration Modes on Human Reliance on AI Recommendation},
@@ -267,15 +389,15 @@
       year      = {2024},
       url       = {https://aisel.aisnet.org/acis2024/146}
     }
-    
+
     @inproceedings{tong_2023_the,
       author    = {Tong, Jiawei and Cui, Tingru and Turel, Ofir and Du, Bo and Cheng, Huaihui},
       title     = {The Effects of Anthropomorphism and Explanation Types on User Perception and Acceptance: Implications for Explainable AI},
       booktitle = {ACIS 2023 Proceedings},
       year      = {2023},
       url       = {https://aisel.aisnet.org/acis2023/42}
-}
+    }
 
-</script>
+  </script>
 </body>
 </html>
